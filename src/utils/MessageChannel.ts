@@ -1,4 +1,5 @@
 import { Channel, connect } from "amqplib";
+import { IProdutoModelValidation } from "../cosmetico/cosmetico.resource";
 
 export default class MessageChannel {
   async createMessageChannel(): Promise<Channel> {
@@ -13,5 +14,17 @@ export default class MessageChannel {
       console.log(err);
       return null;
     }
+  }
+
+  async sendToQueue(
+    messageChannel: Channel,
+    produto: IProdutoModelValidation
+  ): Promise<void> {
+    const produtoJson = JSON.stringify(produto);
+    messageChannel.sendToQueue(
+      process.env.QUEUE_NAME,
+      Buffer.from(produtoJson)
+    );
+    console.log("Created message RabbotMQ");
   }
 }
