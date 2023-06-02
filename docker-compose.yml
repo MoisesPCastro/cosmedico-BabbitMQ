@@ -3,7 +3,7 @@ version: "3.2"
 services:
   treino_messageria:
     image: rabbitmq:3-management-alpine
-    container_name: 'cosmedico_productions'
+    container_name: 'cosmetico_productions'
     environment:
       - RABBITMQ_DEFAULT_USER=dev
       - RABBITMQ_DEFAULT_PASS=dev

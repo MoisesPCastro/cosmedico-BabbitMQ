@@ -3,7 +3,6 @@ import { DataSource } from "typeorm";
 import { config } from "dotenv";
 
 config();
-const client = process.env.DB_CLINT;
 export const dataBaseProviders: Provider[] = [
   {
     provide: "DATA_SOURCE_MYSQL",

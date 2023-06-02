@@ -1,8 +1,8 @@
 import { Provider } from '@nestjs/common';
 import { DataSource, Repository } from 'typeorm';
-import { Produtos } from './cosmedico.entity';
+import { Produtos } from './cosmetico.entity';
 
-const cosmedicoRepository: Provider<Repository<Produtos>> = {
+const cosmeticoRepository: Provider<Repository<Produtos>> = {
   provide: 'COSMEDICO_REPOSITORY',
   useFactory: (dataSouce: DataSource) => {
     return dataSouce.getRepository(Produtos);
@@ -10,4 +10,4 @@ const cosmedicoRepository: Provider<Repository<Produtos>> = {
   inject: ['DATA_SOURCE_MYSQL'],
 };
 
-export const cosmedicoProvider: Provider[] = [cosmedicoRepository];
+export const cosmeticoProvider: Provider[] = [cosmeticoRepository];

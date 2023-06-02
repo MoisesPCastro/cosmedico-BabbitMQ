@@ -1,15 +1,15 @@
-import { IProdutoModelValidation, IProdutoRequest } from './cosmedico.resource';
+import { IProdutoModelValidation, IProdutoRequest } from './cosmetico.resource';
 import { Controller, UsePipes, ValidationPipe } from '@nestjs/common';
 import { Response } from 'express';
 import { Post, Body, Res, HttpStatus } from '@nestjs/common';
-import { CosmedicoService } from './cosmedico.service';
+import { CosmedicoService } from './cosmetico.service';
 import MessageChannel from '../utils/MessageChannel';
 
 interface ICosmedicoController {
   save(produto: IProdutoRequest, res: Response): Promise<Response>;
 }
 
-@Controller('cosmedico/v1')
+@Controller('cosmetico/v1/product')
 export class CosmedicoController implements ICosmedicoController {
   constructor(private readonly sevice: CosmedicoService) {}
 

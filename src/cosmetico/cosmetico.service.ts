@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Produtos } from './cosmedico.entity';
+import { Produtos } from './cosmetico.entity';
 import { Repository } from 'typeorm';
-import { IProdutoModelValidation, IService } from './cosmedico.resource';
+import { IProdutoModelValidation, IService } from './cosmetico.resource';
 
 @Injectable()
 export class CosmedicoService implements IService {

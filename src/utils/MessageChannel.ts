@@ -6,7 +6,7 @@ export default class MessageChannel {
       const connection = await connect(process.env.AMQP_SERVER);
       const channel = await connection.createChannel();
       await channel.assertQueue(process.env.QUEUE_NAME);
-      console.log("Connected to RabbitMQ: cosmedico_queue");
+      console.log("Connected to RabbitMQ: cosmetico_queue");
       return channel;
     } catch (err) {
       console.log("Error while trying to connect to RabbitMQ");
